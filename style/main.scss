@@ -93,7 +93,7 @@ span:not(.q-opt) {
 
 main {
   background-color: $White;
-  padding: 2rem;
+  padding: 2.5rem 2.2rem;
   border-radius: 15px;
   width: clamp(300px, 60%, 735px);
   margin-block: 9rem;
@@ -103,7 +103,7 @@ main {
   }
 
   form {
-    margin-top: 1.25rem;
+    margin-top: 1.4rem;
     display: grid;
     grid-template-columns: repeat(2, minmax(200px, 1fr));
     grid-gap: $columnGap $rowGap;
