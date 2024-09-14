@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Contact form</title>
+
+    <link rel="stylesheet" href="./style/main.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Contact Us</h1>
+      <form action="">
+        <div class="first-name">
+          <label for="firstName">First Name <span>*</span></label>
+          <input
+            type="text"
+            name="first name"
+            id="firstName"
+            class="empty_state"
+          />
+          <p class="error empty">This field is required</p>
+        </div>
+
+        <div class="last-name">
+          <label for="lastName">Last Name <span>*</span></label>
+          <input
+            type="text"
+            name="last name"
+            id="lastName"
+            class="empty_state"
+          />
+          <p class="error empty">This field is required</p>
+        </div>
+
+        <div class="email">
+          <label for="email">Email Address <span>*</span></label>
+          <input type="text" name="email" id="email" class="empty_state"/>
+          <p class="error empty">This field is required</p>
+          <p class="error invalid">Please enter a valid email address</p>
+        </div>
+
+        <div class="query">
+          <label>Query Type <span>*</span></label>
+          <div class="mini-cont">
+            <label>
+              <input type="radio" name="query" value="general enquiry" />
+              <span class="q-opt">General Enquiry</span>
+            </label>
+            <label>
+              <input type="radio" name="query" value="support request" />
+              <span class="q-opt">Support Request</span>
+            </label>
+          </div>
+          <p class="error empty">Please select a query type</p>
+        </div>
+
+        <div class="message">
+          <label for="msg">Message <span>*</span></label>
+          <textarea id="msg" rows="4" class="empty_state"></textarea>
+          <p class="error empty">This field is required</p>
+        </div>
+
+        <div class="terms">
+          <div>
+            <input type="checkbox" id="term" />
+            <label for="term"
+              >I consent to being contacted by the team <span>*</span>
+            </label>
+          </div>
+          <p class="error empty">
+            To submit this form, please consent to being contacted
+          </p>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+      <div class="success_state">
+        <div>
+          <img src="./assets/images/icon-success-check.svg" alt="" />
+          <h2>Message Sent!</h2>
+        </div>
+        <p>Thanks for completing the form. We'll be in touch soon!</p>
+      </div>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>

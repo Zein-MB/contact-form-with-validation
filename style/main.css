@@ -1,0 +1,256 @@
+@font-face {
+  font-family: Karla;
+  src: url(../assets/fonts/Karla-VariableFont_wght.ttf);
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Karla;
+}
+* *::before,
+* *::after {
+  box-sizing: border-box;
+}
+*:not(h1) {
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(148, 38%, 91%);
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --fa-style-family-classic: "Font Awesome 6 Free";
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+span:not(.q-opt) {
+  color: hsl(169, 82%, 27%);
+}
+
+.error {
+  margin-top: 0.8rem;
+  color: hsl(0, 66%, 54%);
+  display: none;
+}
+.error.empty.active, .error.invalid.active {
+  display: block;
+}
+
+.empty_error, .invalid_error {
+  border-color: hsl(0, 66%, 54%) !important;
+}
+
+main {
+  background-color: hsl(0, 0%, 100%);
+  padding: 2rem;
+  border-radius: 15px;
+  width: clamp(300px, 60%, 735px);
+  margin-block: 9rem;
+}
+main h1 {
+  font-size: 1.85rem;
+}
+main form {
+  margin-top: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  grid-gap: 2rem 0.8rem;
+}
+main form > *:not(.first-name, .last-name) {
+  grid-column: 1/3;
+}
+main form > div:not(.query, .terms) label {
+  display: block;
+}
+main form > div:not(.query, .terms) input,
+main form > div:not(.query, .terms) textarea {
+  margin-top: 0.8rem;
+  padding: 0.8rem 1.5rem;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid hsl(186, 15%, 59%);
+  font-size: 18px;
+  transition: 0.2s;
+}
+main form > div:not(.query, .terms) input:hover,
+main form > div:not(.query, .terms) textarea:hover {
+  border-color: hsl(169, 82%, 27%);
+}
+main form > div:not(.query, .terms) input:focus,
+main form > div:not(.query, .terms) textarea:focus {
+  border-color: hsl(169, 82%, 27%);
+}
+main form .query div {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.8rem;
+}
+main form .query div label {
+  flex: 1;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid hsl(186, 15%, 59%);
+  border-radius: 8px;
+  transition: 0.1s;
+  display: flex;
+  gap: 1.3rem;
+  cursor: pointer;
+}
+main form .query div label:has(input:checked) {
+  background-color: hsl(148, 38%, 91%);
+  border-color: hsl(169, 82%, 27%);
+}
+main form .query div label input {
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  margin-left: 0.8rem;
+}
+main form .query div label input:checked::before {
+  outline-color: hsl(169, 82%, 27%);
+}
+main form .query div label input:checked::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+main form .query div label input::before, main form .query div label input::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transition: 0.2s;
+}
+main form .query div label input::before {
+  transform: translate(-50%, -50%);
+  width: 17px;
+  height: 17px;
+  padding: 2px;
+  background-color: transparent;
+  outline: 1px solid hsl(186, 15%, 59%);
+  border-radius: 50%;
+}
+main form .query div label input::after {
+  transform: translate(-50%, -50%) scale(0);
+  background-color: hsl(169, 82%, 27%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+main form .query div label .q-opt {
+  white-space: nowrap;
+  font-size: 17px;
+}
+main form .terms div {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.75rem;
+}
+main form .terms div input {
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+}
+main form .terms div input:checked::after {
+  transform: translateY(-50%) scale(1);
+}
+main form .terms div input::before, main form .terms div input::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+main form .terms div input::before {
+  width: 15px;
+  height: 15px;
+  border: 1px solid hsl(187, 24%, 22%);
+}
+main form .terms div input::after {
+  width: 15px;
+  height: 15px;
+  background-image: url(../assets/images/icon-checkbox-check.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translateY(-50%) scale(0);
+  transition: 0.2s;
+}
+main form button {
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem 1.6rem;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(169, 82%, 27%);
+  cursor: pointer;
+  transition: 0.2s background-color;
+}
+main form button:hover {
+  background-color: hsl(187, 24%, 22%);
+}
+main .success_state {
+  position: fixed;
+  top: -10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  background-color: hsl(187, 24%, 22%);
+  color: #fff;
+  padding: 1.7rem 1rem;
+  border-radius: 10px;
+  transition: 0.2s all ease-in-out;
+}
+main .success_state.visible {
+  top: 2rem;
+  opacity: 1;
+}
+main .success_state div {
+  display: flex;
+  gap: 10px;
+}
+main .success_state div h2 {
+  font-size: 18px;
+}
+main .success_state p {
+  margin-top: 1rem;
+  color: hsl(187, 26%, 80%);
+}
+
+@media (max-width: 768px) {
+  main {
+    margin-block: 5rem;
+  }
+  main form {
+    grid-template-columns: minmax(200px, 1fr);
+  }
+  main form > *:not(.first-name, .last-name) {
+    grid-column: 1/2;
+  }
+  main form .query div {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=main.css.map */
